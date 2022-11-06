@@ -1,1 +1,1 @@
-# Assignment 2 - Swagger-Codegen
+# Assignment 2 - Swagger Codegen
