@@ -1,0 +1,138 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Courses API
+  description: This Courses API is the API for the Courses Spring Boot Project. 
+
+tags:
+  - name: "Courses"
+
+paths:
+  /api/courses/add:
+    post:
+      summary: Add a new course.
+      tags:
+        - "Courses"
+      requestBody:
+        $ref: '#/components/requestBodies/CoursesBody'
+      responses:
+        '200':
+          description: Ok
+          
+  /api/courses/:
+    get:
+      summary: Get all Courses.
+      tags:
+        - "Courses"
+
+      description: This is a Student service description
+      responses:
+        "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Courses'
+            
+  /api/courses/{id}:
+    get:
+      summary: Get course by Id.
+      tags:
+        - "Courses"
+      parameters:
+      - name: id
+        required: true
+        in: path
+        description: Fetch Result for an Id.
+        schema:
+          type: string
+          format: ""
+      responses:
+        '201':
+          description: Created
+          
+  /api/courses/update/{id}:
+   put:
+      summary: Update a course.
+      tags:
+        - "Courses"
+      parameters:
+      - name: id
+        required: true
+        in: path
+        description: Fetch Result for an Id.
+        schema:
+          type: string
+          format: ""
+      responses:
+        '201':
+          description: Created
+   
+  /api/courses/delete/{id}:
+   delete:
+      summary: Delete a course.
+      tags:
+        - "Courses"
+      parameters:
+      - name: id
+        required: true
+        in: path
+        description: Delete a course.
+        schema:
+          type: string
+          format: ""
+      responses:
+        '201':
+          description: Created
+          
+  /api/courses/getByName/{name}:
+   get:
+      summary: Search a course.
+      tags:
+        - "Courses"
+      parameters:
+      - name: name
+        required: true
+        in: path
+        description: Delete a course.
+        schema:
+          type: string
+          format: ""
+      responses:
+        '201':
+          description: Created
+          
+    
+  
+components:
+  schemas:
+    Courses:
+      description: This is the Student model.
+      type: object
+      properties:
+        id:
+          description: The ID of Course.
+          type: string
+        courseName:
+          description: The Name of course.
+          type: string
+        courseCode:
+          description: The Coursecode of Course.
+          type: string
+        courseDuration:
+          description: The Duration of Course.
+          type: integer
+          
+          
+          
+  requestBodies:
+    CoursesBody:
+      description: A JSON object containing Courses information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Courses'
