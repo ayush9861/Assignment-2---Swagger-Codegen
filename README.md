@@ -1,4 +1,4 @@
-#Assignment 2 - Swagger Codegen
+##Assignment 2 - Swagger Codegen
 
 ##What is Swagger Codegen?
 
