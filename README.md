@@ -18,9 +18,9 @@ According to me **Swagger Codegen** is a framework which allow developer to make
 
 ## Steps to generate stub:
 
-Step 1- Go to the "editor.swagger.com"
+Step 1- Go to the "**editor.swagger.com**"
 
-Step 2- Code your API design using OpenAPI or Swagger2 snippets.
+Step 2- Code your API design using **OpenAPI** or **Swagger2 snippets**.
 
 Step 3- Save the code as **api.yaml**.
 
