@@ -8,11 +8,11 @@ According to me **Swagger Codegen** is a framework which allow developer to make
 
 **Springboot: 2.7**
 
-### Dependency Managers Used:-
+### Dependency Managers Used:
 
 **Maven: 3.8.6**
 
-### Java Version Used:-
+### Java Version Used:
 
 **Java: 17.0.5**
 
