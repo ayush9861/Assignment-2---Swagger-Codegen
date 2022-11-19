@@ -37,11 +37,11 @@ Step 7- Now navigate to your localhost and navigate to the **swagger-ui.html** p
 Step 8- If it is visible with all the snippets then you are done. 
 
 ## Screenshots:-
-![](https://i.imgur.com/QCVXeFY.png)
+![](https://i.imgur.com/YQU4KfL.png)
 ![](https://i.imgur.com/8UaFRkF.png)
 ![](https://i.imgur.com/mRGBWRq.png)
 ![](https://i.imgur.com/ap7xdSu.png)
-![](https://i.imgur.com/rRHpMJH.png)
+![](https://i.imgur.com/BcRG0hN.png)
 
 
 
