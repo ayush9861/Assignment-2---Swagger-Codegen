@@ -5,7 +5,7 @@
  */
 package io.swagger.api;
 
-import io.swagger.model.Courses;
+import io.swagger.model.Server;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -32,58 +32,63 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-07T00:59:28.756715600+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-19T15:09:32.514488200+05:30[Asia/Calcutta]")
 @Validated
 public interface ApiApi {
 
-    @Operation(summary = "Add a new course.", description = "", tags={ "Courses" })
+    @Operation(summary = "Add a new server.", description = "", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "Ok") })
-    @RequestMapping(value = "/api/courses/add",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/add",
+        produces = { "application/json" }, 
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<Void> apiCoursesAddPost(@Parameter(in = ParameterIn.DEFAULT, description = "A JSON object containing Courses information", required=true, schema=@Schema()) @Valid @RequestBody Courses body);
+    ResponseEntity<List<Server>> apiServerAddPost(@Parameter(in = ParameterIn.DEFAULT, description = "A JSON object containing Server information", required=true, schema=@Schema()) @Valid @RequestBody Server body);
 
 
-    @Operation(summary = "Delete a course.", description = "", tags={ "Courses" })
+    @Operation(summary = "Delete a server.", description = "", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "201", description = "Created") })
-    @RequestMapping(value = "/api/courses/delete/{id}",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/delete/{id}",
+        produces = { "application/json" }, 
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> apiCoursesDeleteIdDelete(@Parameter(in = ParameterIn.PATH, description = "Delete a course.", required=true, schema=@Schema()) @PathVariable("id") String id);
+    ResponseEntity<List<Server>> apiServerDeleteIdDelete(@Parameter(in = ParameterIn.PATH, description = "Delete a server.", required=true, schema=@Schema()) @PathVariable("id") String id);
 
 
-    @Operation(summary = "Get all Courses.", description = "This is a Student service description", tags={ "Courses" })
+    @Operation(summary = "Get all Servers.", description = "This is Server service description", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Courses.class)))) })
-    @RequestMapping(value = "/api/courses/",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<List<Courses>> apiCoursesGet();
+    ResponseEntity<List<Server>> apiServerGet();
 
 
-    @Operation(summary = "Search a course.", description = "", tags={ "Courses" })
+    @Operation(summary = "Search a server.", description = "", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "201", description = "Created") })
-    @RequestMapping(value = "/api/courses/getByName/{name}",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/getByName/{name}",
+        produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Void> apiCoursesGetByNameNameGet(@Parameter(in = ParameterIn.PATH, description = "Delete a course.", required=true, schema=@Schema()) @PathVariable("name") String name);
+    ResponseEntity<List<Server>> apiServerGetByNameNameGet(@Parameter(in = ParameterIn.PATH, description = "Delete a server.", required=true, schema=@Schema()) @PathVariable("name") String name);
 
 
-    @Operation(summary = "Get course by Id.", description = "", tags={ "Courses" })
+    @Operation(summary = "Get server by Id.", description = "", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "201", description = "Created") })
-    @RequestMapping(value = "/api/courses/{id}",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/{id}",
+        produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Void> apiCoursesIdGet(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id);
+    ResponseEntity<List<Server>> apiServerIdGet(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id);
 
 
-    @Operation(summary = "Update a course.", description = "", tags={ "Courses" })
+    @Operation(summary = "Update a server.", description = "", tags={ "Server" })
     @ApiResponses(value = { 
-        @ApiResponse(responseCode = "201", description = "Created") })
-    @RequestMapping(value = "/api/courses/update/{id}",
+        @ApiResponse(responseCode = "200", description = "This means its ok.", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Server.class)))) })
+    @RequestMapping(value = "/api/server/update/{id}",
+        produces = { "application/json" }, 
         method = RequestMethod.PUT)
-    ResponseEntity<Void> apiCoursesUpdateIdPut(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id);
+    ResponseEntity<List<Server>> apiServerUpdateIdPut(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id);
 
 }
 

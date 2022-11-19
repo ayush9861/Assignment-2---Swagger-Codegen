@@ -2,31 +2,18 @@ openapi: 3.0.0
 
 info:
   version: 0.0.1
-  title: Courses API
-  description: This Courses API is the API for the Courses Spring Boot Project. 
+  title: Server API
+  description: This Server API is the API for the Server Spring Boot Project. 
 
-tags:
-  - name: "Courses"
 
 paths:
-  /api/courses/add:
+  /api/server/add:
     post:
-      summary: Add a new course.
+      summary: Add a new server.
       tags:
-        - "Courses"
+        - "Server"
       requestBody:
-        $ref: '#/components/requestBodies/CoursesBody'
-      responses:
-        '200':
-          description: Ok
-          
-  /api/courses/:
-    get:
-      summary: Get all Courses.
-      tags:
-        - "Courses"
-
-      description: This is a Student service description
+        $ref: '#/components/requestBodies/ServerBody'
       responses:
         "200":
           description: This means its ok.
@@ -35,13 +22,30 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Courses'
-            
-  /api/courses/{id}:
+                  $ref: '#/components/schemas/server'
+          
+  /api/server/:
     get:
-      summary: Get course by Id.
+      summary: Get all Servers.
       tags:
-        - "Courses"
+        - "Server"
+
+      description: This is Server service description
+      responses:
+        "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/server'
+            
+  /api/server/{id}:
+    get:
+      summary: Get server by Id.
+      tags:
+        - "Server"
       parameters:
       - name: id
         required: true
@@ -51,14 +55,20 @@ paths:
           type: string
           format: ""
       responses:
-        '201':
-          description: Created
+       "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/server'
           
-  /api/courses/update/{id}:
+  /api/server/update/{id}:
    put:
-      summary: Update a course.
+      summary: Update a server.
       tags:
-        - "Courses"
+        - "Server"
       parameters:
       - name: id
         required: true
@@ -68,71 +78,89 @@ paths:
           type: string
           format: ""
       responses:
-        '201':
-          description: Created
+       "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/server'
    
-  /api/courses/delete/{id}:
+  /api/server/delete/{id}:
    delete:
-      summary: Delete a course.
+      summary: Delete a server.
       tags:
-        - "Courses"
+        - "Server"
       parameters:
       - name: id
         required: true
         in: path
-        description: Delete a course.
+        description: Delete a server.
         schema:
           type: string
           format: ""
       responses:
-        '201':
-          description: Created
+        "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/server'
           
-  /api/courses/getByName/{name}:
+  /api/server/getByName/{name}:
    get:
-      summary: Search a course.
+      summary: Search a server.
       tags:
-        - "Courses"
+        - "Server"
       parameters:
       - name: name
         required: true
         in: path
-        description: Delete a course.
+        description: Delete a server.
         schema:
           type: string
           format: ""
       responses:
-        '201':
-          description: Created
+         "200":
+          description: This means its ok.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/server'
           
     
   
 components:
   schemas:
-    Courses:
-      description: This is the Student model.
+    server:
+      description: This is the Server model.
       type: object
       properties:
         id:
-          description: The ID of Course.
+          description: The ID of Server.
           type: string
-        courseName:
-          description: The Name of course.
+        Name:
+          description: The Name of server.
           type: string
-        courseCode:
-          description: The Coursecode of Course.
+        language:
+          description: The Language Used on the Server.
           type: string
-        courseDuration:
-          description: The Duration of Course.
-          type: integer
+        framework:
+          description: The Framework Used.
+          type: string
           
           
           
   requestBodies:
-    CoursesBody:
-      description: A JSON object containing Courses information
+    ServerBody:
+      description: A JSON object containing Server information
       required: true
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Courses'
+            $ref: '#/components/schemas/server'

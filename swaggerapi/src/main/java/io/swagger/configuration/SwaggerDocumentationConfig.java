@@ -13,7 +13,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-07T00:59:28.756715600+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-19T15:09:32.514488200+05:30[Asia/Calcutta]")
 @Configuration
 public class SwaggerDocumentationConfig {
 
@@ -30,8 +30,8 @@ public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("Courses API")
-            .description("This Courses API is the API for the Courses Spring Boot Project.")
+            .title("Server API")
+            .description("This Server API is the API for the Server Spring Boot Project.")
             .license("")
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("")
@@ -44,8 +44,8 @@ public class SwaggerDocumentationConfig {
     public OpenAPI openApi() {
         return new OpenAPI()
             .info(new Info()
-                .title("Courses API")
-                .description("This Courses API is the API for the Courses Spring Boot Project.")
+                .title("Server API")
+                .description("This Server API is the API for the Server Spring Boot Project.")
                 .termsOfService("")
                 .version("0.0.1")
                 .license(new License()

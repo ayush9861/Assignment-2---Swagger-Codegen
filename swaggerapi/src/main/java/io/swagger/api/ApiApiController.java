@@ -1,6 +1,6 @@
 package io.swagger.api;
 
-import io.swagger.model.Courses;
+import io.swagger.model.Server;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-07T00:59:28.756715600+05:30[Asia/Calcutta]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2022-11-19T15:09:32.514488200+05:30[Asia/Calcutta]")
 @RestController
 public class ApiApiController implements ApiApi {
 
@@ -48,43 +48,88 @@ public class ApiApiController implements ApiApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> apiCoursesAddPost(@Parameter(in = ParameterIn.DEFAULT, description = "A JSON object containing Courses information", required=true, schema=@Schema()) @Valid @RequestBody Courses body) {
-        String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<Void> apiCoursesDeleteIdDelete(@Parameter(in = ParameterIn.PATH, description = "Delete a course.", required=true, schema=@Schema()) @PathVariable("id") String id) {
-        String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<List<Courses>> apiCoursesGet() {
+    public ResponseEntity<List<Server>> apiServerAddPost(@Parameter(in = ParameterIn.DEFAULT, description = "A JSON object containing Server information", required=true, schema=@Schema()) @Valid @RequestBody Server body) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<List<Courses>>(objectMapper.readValue("[ {\r\n  \"courseName\" : \"courseName\",\r\n  \"courseDuration\" : 0,\r\n  \"courseCode\" : \"courseCode\",\r\n  \"id\" : \"id\"\r\n}, {\r\n  \"courseName\" : \"courseName\",\r\n  \"courseDuration\" : 0,\r\n  \"courseCode\" : \"courseCode\",\r\n  \"id\" : \"id\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<List<Courses>>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<List<Courses>>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> apiCoursesGetByNameNameGet(@Parameter(in = ParameterIn.PATH, description = "Delete a course.", required=true, schema=@Schema()) @PathVariable("name") String name) {
+    public ResponseEntity<List<Server>> apiServerDeleteIdDelete(@Parameter(in = ParameterIn.PATH, description = "Delete a server.", required=true, schema=@Schema()) @PathVariable("id") String id) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> apiCoursesIdGet(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id) {
+    public ResponseEntity<List<Server>> apiServerGet() {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> apiCoursesUpdateIdPut(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id) {
+    public ResponseEntity<List<Server>> apiServerGetByNameNameGet(@Parameter(in = ParameterIn.PATH, description = "Delete a server.", required=true, schema=@Schema()) @PathVariable("name") String name) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    public ResponseEntity<List<Server>> apiServerIdGet(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id) {
+        String accept = request.getHeader("Accept");
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    public ResponseEntity<List<Server>> apiServerUpdateIdPut(@Parameter(in = ParameterIn.PATH, description = "Fetch Result for an Id.", required=true, schema=@Schema()) @PathVariable("id") String id) {
+        String accept = request.getHeader("Accept");
+        if (accept != null && accept.contains("application/json")) {
+            try {
+                return new ResponseEntity<List<Server>>(objectMapper.readValue("[ {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n}, {\r\n  \"framework\" : \"framework\",\r\n  \"language\" : \"language\",\r\n  \"id\" : \"id\",\r\n  \"Name\" : \"Name\"\r\n} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+            } catch (IOException e) {
+                log.error("Couldn't serialize response for content type application/json", e);
+                return new ResponseEntity<List<Server>>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return new ResponseEntity<List<Server>>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }
